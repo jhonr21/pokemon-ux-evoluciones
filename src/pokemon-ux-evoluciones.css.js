@@ -1,0 +1,106 @@
+import { css, unsafeCSS } from 'lit-element';
+import * as foundations from '@bbva-web-components/bbva-foundations-styles';
+
+
+
+export default css`
+:host {
+  display: block;
+  box-sizing: border-box;
+}
+
+:host([hidden]), [hidden] {
+  display: none !important;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.pokemon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  transition: transform 0.2s;
+}
+
+.pokemon-container:hover {
+  transform: scale(1.02);
+}
+
+.evolutions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.evolutions-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.evolution-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: calc(33% - 20px);
+  min-width: 150px;
+}
+
+@media (max-width: 768px) {
+  .evolution-card {
+    width: calc(50% - 20px);
+  }
+}
+@media (max-width: 480px) {
+  .evolution-card {
+    width: 100%;
+  }
+  .pokemon-container {
+    width: 95%;
+    padding: 10px;
+  }
+}
+.evolution-card img {
+  width: 100px;
+  height: auto;
+}
+
+.header {
+  display: flex; /* Habilita flexbox para el encabezado */
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: center; /* Centra horizontalmente los elementos */
+  justify-content: center; /* Centra verticalmente si es necesario */
+  text-align: center; /* Alinea el texto al centro */
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el contenido del figure */
+  text-align: center;
+  width: 24px;
+  height: 24px;
+}
+
+span {
+  vertical-align: super;
+}
+`;
